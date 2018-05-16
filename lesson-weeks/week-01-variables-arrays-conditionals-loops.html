@@ -42,6 +42,78 @@
             document.getElementById("demo2").innerHTML =
                 pi + "<br>" + person + "<br>" + answer;
         </script>
+        
+        <br>
+        <h2>JavaScript Arrays</h2>
+
+        <p>This array contains the following: ["Saab", "Volvo", "BMW"]</p>
+        <p id="demo3"></p>
+
+        <script>
+            var cars = ["Saab", "Volvo", "BMW"];
+            document.getElementById("demo3").innerHTML = cars;
+        </script>
+        <p>Index 0 is "Saab", index 1 is "Volvo", and index 2 is "BMW"</p>
+        
+        <br>
+        <h2>JavaScript Objects</h2>
+        
+        <p>JavaScript uses names to access object properties.</p>
+        <p>This object contains the following: [firstName:"John", lastName:"Doe", age:46]</p>
+        <p id="demo4"></p>
+
+        <script>
+            var person = {firstName:"John", lastName:"Doe", age:46};
+            document.getElementById("demo4").innerHTML = person["firstName"];
+        </script>
+
+        <br>
+        <h2>JavaScript Arrays Part 2</h2>
+
+        <p>If you use a named index when accessing an array, JavaScript will redefine the array to a standard object, and some array methods and properties will produce undefined or incorrect results.</p>
+        <p>This array contains the following:</p>
+        <ul>var person = [];
+            <li>person["firstName"] = "John";</li>
+            <li>person["lastName"] = "Doe";</li>
+            <li>person["age"] = 46; </li>
+        </ul>
+        <p>Here we try to access the first "index" (the first name) with 0:</p>
+        <p id="demo5"></p>
+        
+        <script>
+            var person = [];
+            person["firstName"] = "John";
+            person["lastName"] = "Doe";
+            person["age"] = 46; 
+            document.getElementById("demo5").innerHTML =
+            person[0] + " " + person.length;
+        </script>
+        
+        <br>
+        <h2>JavaScript Conditional Statements</h2>
+        
+        <p>Using an IF/ELSE statement, this will provide you with either a "Good morning", "Good day" or "Good evening" depending on the current time of day</p>
+        
+        <p>Click the button to get a time-based greeting.</p>
+
+        <button onclick="myFunction()">Try it</button>
+
+        <p id="dem6o"></p>
+
+        <script>
+            function myFunction() {
+                var time = new Date().getHours();
+                var greeting;
+                if (time < 10) {
+                    greeting = "Good morning";
+                } else if (time < 20) {
+                    greeting = "Good day";
+                } else {
+                    greeting ="Good evening";
+                }
+            document.getElementById("demo6").innerHTML = greeting;
+            }
+        </script>
 
     </body>
 </html>
