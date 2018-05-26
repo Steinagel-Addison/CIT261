@@ -1,0 +1,69 @@
+<!DOCTYPE HTML>
+<html>
+    <head>
+    </head>
+
+    <body>
+        <h2>Storing Simple Data</h2>
+        
+        <p>By using this web storage API, we can store simple key/value pairs of data (strings, numbers, etc) and retrieve these values when needed.</p>
+        
+        <h3>Getters and Setters</h3>
+        
+        <p>Here I have used "localStorage.setItem('firstName', 'Addison')" in order to store a key called 'firstName' with the value "Addison".</p>
+        
+        <p>I then used "var myName = localStorage.getItem('firstName')" in order to assign the value retrieved by getItem() from the item 'firstName' and assign the value to 'myName'.</p>
+        
+        <p>Finally, I use the variable 'myName' to demonstrate the value has been assigned as 'Addison':</p>
+        
+        <p id="localStorageDemo"></p>
+        
+        <script>
+            localStorage.setItem('firstName', 'Addison');
+            var myName = localStorage.getItem('firstName');
+            document.getElementById("localStorageDemo").innerHTML = myName;
+        </script>
+        
+        <h3>Deleting items</h3>
+        
+        <p>We can also remove that item out of web storage by calling the "removeItem()" method.</p>
+        
+        <p>Here I will attempt to print the value of 'myName' again after using the above method:</p>
+        
+        <p id="localStorageRemoveDemo"></p>
+        
+        <script>
+            localStorage.removeItem('firstName');
+            var myName = localStorage.getItem('firstName');
+            document.getElementById("localStorageRemoveDemo").innerHTML = myName;
+        </script>
+        
+        <br>
+        <p>Since the item has been removed, it returned NULL (hence, showing nothing).</p>
+        
+        <p>We can also remove everything in the array from the object with "clear()".</p>
+        
+        <script>
+            localStorage.clear();
+        </script>
+        
+        <h3>Finding an item or getting the length</h3>
+        
+        <p>Finally, we can find a specific item in the object with "key(n)", or the number of items in the object with "length". The array is alphabetically sorted by key.</p>
+        
+        <p id="findWife"></p>
+        
+        <p id="length"></p>
+        
+        <script>
+            localStorage.setItem('firstName', 'Addison');
+            localStorage.setItem('wifeFirstName', 'Ana');
+            localStorage.setItem('sonFirstName', 'Alex');
+            document.getElementById("findWife").innerHTML = localStorage.key(2);
+            document.getElementById("length").innerHTML = localStorage.length;
+        </script>
+        
+        <p></p>
+        
+    </body>
+</html>
