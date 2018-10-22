@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html>
+    <head>
+    </head>
+
+    <body>
+        <h2>Creating a JavaScript Object</h2>
+        
+        <p>Like other programming languages, class objects with their own properties can be created and instantiated in JavaScript as shown below.  I've also added an additonal method to this class in order to display all the properties:</p>
+        
+        <p id="objectCreation1"></p>
+        <p id="objectCreation2"></p>
+        <p id="objectCreation3"></p>
+        <p id="objectCreation4"></p>
+        <p id="objectCreation5"></p>
+        <p id="objectCreation6"></p>
+        <p id="objectCreation7"></p>
+        <p id="objectCreation8"></p>
+        
+        <script>
+            class familyMember {
+                constructor(name, age, isChild) {
+                    this.name    = name;
+                    this.age     = age;
+                    this.isChild = isChild;
+                }
+                
+                displayProperties() {
+                    return this.name + ', ' + this.age + ', ' + this.isChild;
+                }
+            }
+            
+            var member1 = new familyMember('Addison', 32, false);
+            var member2 = new familyMember('Alex', 11, true);
+            
+            document.getElementById("objectCreation1").innerHTML = member1.name;
+            document.getElementById("objectCreation2").innerHTML = member2.name;
+            document.getElementById("objectCreation3").innerHTML = member1.age;
+            document.getElementById("objectCreation4").innerHTML = member2.age;
+            document.getElementById("objectCreation5").innerHTML = member1.isChild;
+            document.getElementById("objectCreation6").innerHTML = member2.isChild;
+            document.getElementById("objectCreation7").innerHTML = member1.displayProperties();
+            document.getElementById("objectCreation8").innerHTML = member2.displayProperties();
+        </script>
+        
+    </body>
+</html>

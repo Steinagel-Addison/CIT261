@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html>
+    <head>
+    </head>
+
+    <body>
+        <h2>JSON Parse and Stringify</h2>
+        
+        <p>JSON objects and its methods are quite useful.  JSON.parse() allows us to turn a JSON string into a JavaScript object, and JSON.stringify() take a JavaScript object and turns it into a JSON string:</p>
+        
+        <p id="stringify"></p>
+        <p id="parse"></p>
+        
+        <script>
+            class familyMember {
+                constructor(name, age, isChild) {
+                    this.name    = name;
+                    this.age     = age;
+                    this.isChild = isChild;
+                }
+                
+                displayProperties() {
+                    return this.name + ', ' + this.age + ', ' + this.isChild;
+                }
+            }
+            
+            var member1 = new familyMember('Addison', 32, false);
+            var member2 = new familyMember('Alex', 11, true);
+            
+            var objectString = JSON.stringify(member1);
+            var stringObject = JSON.parse(objectString);
+            
+            document.getElementById("stringify").innerHTML = objectString;
+            document.getElementById("parse").innerHTML = stringObject.age;
+        </script>
+        
+    </body>
+</html>
